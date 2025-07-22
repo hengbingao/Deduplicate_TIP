@@ -12,8 +12,8 @@ The methods for TIP-seq deduplication
 2. Set the executable permissions:
 
     ```bash
-    chmod +x $IMPUTEMCG_PATH/bin/*
-    chmod +x $IMPUTEMCG_PATH/src/*
+    chmod +x $Deduplicate_TIP_PATH/bin/*
+    chmod +x $Deduplicate_TIP_PATH/src/*
     ```
 
 3. Add to environment:
