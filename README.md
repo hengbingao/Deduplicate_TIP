@@ -1,6 +1,6 @@
 # Deduplicate_TIP
 The methods for TIP-seq deduplication
-![TIP-seq](https://github.com/hengbingao/Deduplicate_TIP/blob/main/png/TIP-seq.png)
+![TIP-seq](https://github.com/hengbingao/Deduplicate_TIP/blob/main/png/Bulk_TIP-seq.png)
 
 
 ## **Install**
