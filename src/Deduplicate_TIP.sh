@@ -75,7 +75,7 @@ samtools index "$output_bam"
 # 生成去重报告
 all_reads=$(samtools view -c "$tmpdir/${basename}.sort.bam")
 nondup_reads=$(samtools view -c "$output_bam")
-duplicate_ratio=$(echo "1-($nondup_reads/$all_reads)" | bc -l)
+duplicate_ratio=$(echo "1-($nondup_reads/$all_reads)" | bc -l| awk '{printf "%.6f\n", $0}')
 
 report_file="${output_bam%.bam}.TIP_dedup_report.txt"
 {
