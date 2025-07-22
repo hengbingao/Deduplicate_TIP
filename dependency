@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#
+# Deduplicate_TIP - A 5'-end-based deduplication tool for TIP-seq BAM files
+#
+# Dependencies:
+#   This script requires the following tools to be installed and accessible in your PATH:
+#
+#   - bash              (any modern version)
+#   - samtools >= 1.10  (used for sorting, indexing, and counting reads)
+#   - awk               (used for logic and formatting)
+#   - grep              (used to separate SAM header and body)
+#   - sort              (used for sorting reads by key)
+#   - bc                (used for floating-point math in duplicate ratio)
+#
+# You can install them via conda or system package managers:
+#
+#   conda install -c bioconda samtools
+#   sudo apt install coreutils grep gawk bc
+#
+# Example usage:
+#   Deduplicate_TIP -i sample.bam -o sample_dedup.bam
+#
+# Output:
+#   - Deduplicated BAM file
+#   - BAM index (.bai)
+#   - Deduplication report in text format
+#
