@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+# -----------------------------
+# Deduplicate_TIP: Main CLI script
+# -----------------------------
+
+# 帮助信息
+show_help() {
+    echo "Usage: Deduplicate_TIP -i <input.bam> -o <output.bam>"
+    echo
+    echo "Options:"
+    echo "  -i, --input-file      Input BAM file (required)"
+    echo "  -o, --output-file     Output BAM file after deduplication (required)"
+    echo "  -h, --help            Show this help message and exit"
+}
+
+# 解析命令行参数
+while [[ "$1" != "" ]]; do
+    case $1 in
+        -i | --input-file )   shift
+                              input_file=$1
+                              ;;
+        -o | --output-file )  shift
+                              output_file=$1
+                              ;;
+        -h | --help )         show_help
+                              exit 0
+                              ;;
+        * )                   echo "Unknown option: $1"
+                              show_help
+                              exit 1
+    esac
+    shift
+done
+
+# 检查参数
+if [[ -z "$input_file" || -z "$output_file" ]]; then
+    echo "Error: Missing required arguments."
+    show_help
+    exit 1
+fi
+
+# 获取当前脚本所在路径，定位 src 目录
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+src_dir="$script_dir/../src"
+
+# 检查核心脚本是否存在
+core_script="$src_dir/Deduplicate_TIP.sh"
+if [[ ! -x "$core_script" ]]; then
+    echo "Error: Core script '$core_script' not found or not executable."
+    exit 1
+fi
+
+# 调用核心脚本
+"$core_script" -i "$input_file" -o "$output_file"
