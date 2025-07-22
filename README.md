@@ -22,6 +22,6 @@ The methods for TIP-seq deduplication
 3. Add to environment:
 
     ```bash
-    echo 'export PATH=$PATH:$IMPUTEMCG_PATH/bin' >> ~/.bashrc
+    echo 'export PATH=$PATH:$Deduplicate_TIP_PATH/bin' >> ~/.bashrc
     source ~/.bashrc
     ```
