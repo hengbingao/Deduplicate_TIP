@@ -25,3 +25,9 @@ The methods for TIP-seq deduplication
     echo 'export PATH=$PATH:$Deduplicate_TIP_PATH/bin' >> ~/.bashrc
     source ~/.bashrc
     ```
+## **Usage**
+
+    ```bash
+    Deduplicate_TIP -i <input unsort.bam> -o <output deduplicated.bam> 
+    ```
+
