@@ -26,6 +26,9 @@ The methods for TIP-seq deduplication
     source ~/.bashrc
     ```
 ## **Usage**
+
+1. Uasge example:
+
     ```bash
     Deduplicate_TIP -i <input unsort.bam> -o <output deduplicated.bam> 
     ```
