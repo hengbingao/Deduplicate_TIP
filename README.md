@@ -27,7 +27,7 @@ The methods for TIP-seq deduplication
     ```
 ## **Usage**
 
-1. Uasge example:
+Uasge example:
 
     ```bash
     Deduplicate_TIP -i <input unsort.bam> -o <output deduplicated.bam> 
